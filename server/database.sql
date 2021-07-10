@@ -6,4 +6,14 @@ CREATE TABLE users (
   user_password VARCHAR(255) NOT NULL
 );
 
-INSERT INTO users (user_name, user_email, user_password) VALUES ('mert', 'mertuygur02@gmail.com', 'hachiko2k');
+CREATE TABLE parameters (
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+  owner_id VARCHAR(255) not null references users(user_id),
+  work INTEGER,
+  leisure INTEGER,
+  game INTEGER,
+  happiness INTEGER,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+
