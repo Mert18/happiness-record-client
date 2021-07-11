@@ -12,11 +12,10 @@ const App = () => {
           <p>It is simple. Everyday you are asked to enter some values. By time, you are going to find out what makes you happy.</p>
         </div>
         <div className="app-main">
-          
         </div>
         <div className="app-auth">
-          <Link to='/'>Register</Link>
-          <Link to='/'>Login</Link>
+          <Link to='/register'>Register</Link>
+          <Link to='/login'>Login</Link>
         </div>
       </div>
     </Layout>

@@ -15,6 +15,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  height: 20vh;
 }
 .nav-logo img{
   display: block;

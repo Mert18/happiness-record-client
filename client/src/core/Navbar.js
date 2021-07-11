@@ -5,10 +5,12 @@ const Navbar = () => {
   return (
     <div className="nav">
       <div className="nav-logo">
-        <img src='/images/lg.svg' width='128px' alt='logo' />
+        <Link to='/'>
+          <img src='/images/wih.svg' width='128px' alt='logo' />
+        </Link>
       </div>
       <ul className="nav-nav">
-        <li><Link to='/'>Profile</Link></li>
+        <li><Link to='/profile'>Profile</Link></li>
         <li><Link to='/'>Feed</Link></li>
       </ul>
     </div>
