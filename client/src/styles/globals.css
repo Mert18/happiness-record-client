@@ -1,0 +1,35 @@
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+}
+
+.nav{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav-logo img{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.nav-nav{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-nav a{
+  margin-right: 1rem;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
