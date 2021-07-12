@@ -3,6 +3,8 @@ import Layout from './core/Layout';
 import {Link} from 'react-router-dom';
 import './styles/app.css';
 
+import HomeGraph from './components/HomeGraph';
+
 const App = () => {
   return (
     <Layout>
@@ -12,10 +14,11 @@ const App = () => {
           <p>It is simple. Everyday you are asked to enter some values. By time, you are going to find out what makes you happy.</p>
         </div>
         <div className="app-main">
+          <HomeGraph />
         </div>
         <div className="app-auth">
-          <Link to='/register'>Register</Link>
-          <Link to='/login'>Login</Link>
+          <Link id="reg" to='/register'>Register</Link>
+          <Link id="log" to='/login'>Login</Link>
         </div>
       </div>
     </Layout>

@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="nav">
       <div className="nav-logo">
         <Link to='/'>
-          <img src='/images/wih.svg' width='128px' alt='logo' />
+          <img src='/images/lg.svg' width='158px' alt='logo' />
         </Link>
       </div>
       <ul className="nav-nav">
