@@ -51,6 +51,19 @@ router.post('/login', validInfo, async(req, res) => {
   }
 });
 
+router.get('/users/:id', validInfo, async(req, res) => {
+  try {
+    const {id} = req.user.id;
+
+    const user = await pool.query('SELECT * FROM users WHERE user_id = $1', [id]);
+    res.json(user);
+
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('JWT Auth error.');
+  }
+})
+
 router.get('/is-verify', authorization, async(req, res) => {
   try {
     res.json(true);
