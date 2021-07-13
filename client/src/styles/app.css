@@ -21,7 +21,7 @@
 }
 
 .app-main{
-  grid-column: 4 / 21;
+  grid-column: 1 / -1;
   padding: 2rem;
   font-size: 2rem;
 }

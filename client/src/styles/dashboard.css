@@ -1,0 +1,61 @@
+
+
+.dashboard{
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+}
+
+.dashboard-hero{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 20vh;
+  background-color: #C23772;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.dashboard-hero button{
+  background: transparent;
+  font-size: 1.3rem;
+  outline: none;
+  border: none;
+  color: white;
+  margin-top: .3rem;
+}
+.dashboard-hero button:hover{
+  cursor: pointer;
+  color: rgb(233, 230, 230);
+}
+
+.dashboard-data {
+  grid-column: 1 / -1;
+  padding: 2rem;
+}
+.dashboard-data-today{
+  margin-left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-data-inp{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inp-group{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  width: 30rem;
+}
+.dashboard-data-inp button{
+  width: 10rem;
+  height: 6vh;
+  margin: 1rem;
+}
+.dashboard-data-inp button:hover{
+  cursor: pointer;
+}

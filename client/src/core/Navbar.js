@@ -32,7 +32,7 @@ const Navbar = () => {
         </Link>
       </div>
       {isAuthenticated ? <ul className="nav-nav">
-        <li><Link to='/dashboard'>Profile</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/feed'>Feed</Link></li>
       </ul> : <ul className="nav-nav">
         <li><Link to='/register'>Register</Link></li>

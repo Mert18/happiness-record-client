@@ -15,7 +15,7 @@ const HomeGraph = () => {
         setColor3(randomColor());
         setColor4(randomColor());
       }, 2000)
-  }, [color1, color2, color3, color4])
+  }, [color1])
   return (
     <div className="homegraph">
         <svg viewBox="0 0 1280 360">
