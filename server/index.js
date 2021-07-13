@@ -1,17 +1,18 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const cors = require('cors');
+const cors = require("cors");
 
-const auth = require('./routes/jwtAuth.js');
-const data = require('./routes/data.js')
-// Middlewares
-app.use(express.json());
+//middleware
+
 app.use(cors());
+app.use(express.json());
 
-//Routes
-app.use('/auth', auth);
-app.use('/data', data);
+//routes
+
+app.use("/authentication", require("./routes/jwtAuth"));
+
+app.use("/dashboard", require("./routes/dashboard"));
 
 app.listen(5000, () => {
-  console.log('Server is running. (5000)');
-})
+  console.log(`Server is starting on port 5000`);
+});

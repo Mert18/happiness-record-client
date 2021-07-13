@@ -1,35 +1,47 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Layout from '../core/Layout'
 import '../styles/forms.css';
-import axios from 'axios';
 
-const RegisterScreen = () => {
+const RegisterScreen = ({setAuth}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
   const [message, setMessage] = useState('');
 
-
-  const submitHandler = (e) => {
+  const onSubmitForm = async e => {
     e.preventDefault();
-    if(password !== password2){
-      setMessage('Passwords do not match.');
-    }else {
-      const config = {
-        headers: {'Access-Control-Allow-Origin':'http://localhost:5000'}
+    try {
+      const body = { email, password, name };
+      const response = await fetch(
+        "http://localhost:5000/authentication/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(body)
+        }
+      );
+      const parseRes = await response.json();
+
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken);
+        setAuth(true);
+      } else {
+        setAuth(false);
       }
-      axios.post('http://localhost:5000/auth/register', {name, email, password}, config )
+    } catch (err) {
+      console.error(err.message);
     }
-    
-  }
+  };
   return (
     <Layout>
       <div className="form-container" id="regcon">
         <div className="message">
           {message}
         </div>
-        <form className="form" id="regform" onSubmit={submitHandler}>
+        <form className="form" id="regform" onSubmit={onSubmitForm}>
             <h2>Register</h2>
             <input type='text' id='name' placeholder="name" value={name} onChange={(e) => setName(e.target.value)} />
             <input type='text' placeholder="email" id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -42,4 +54,4 @@ const RegisterScreen = () => {
   )
 }
 
-export default RegisterScreen
+export default RegisterScreen;

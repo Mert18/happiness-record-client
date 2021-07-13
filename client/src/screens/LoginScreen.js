@@ -1,14 +1,47 @@
-import React from 'react'
-import Layout from '../core/Layout'
-import '../styles/forms.css'
-const LoginScreen = () => {
+import React, {useState} from 'react';
+import Layout from '../core/Layout';
+import '../styles/forms.css';
+
+const LoginScreen = ({setAuth}) => {
+
+  const [email, setEmail] = useState('mertuygur02@gmail.com');
+  const [password, setPassword] = useState('hachiko2k');
+
+  const onSubmitForm = async e => {
+    e.preventDefault();
+    try {
+      const body = { email, password };
+      const response = await fetch(
+        "http://localhost:5000/authentication/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(body)
+        }
+      );
+
+      const parseRes = await response.json();
+
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken);
+        setAuth(true);
+      } else {
+        setAuth(false);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   return (
     <Layout>
       <div className="form-container" id="logcon">
-        <form className="form" id="logform">
+        <form className="form" id="logform" onSubmit={onSubmitForm}>
             <h2>Login</h2>
-            <input type='text' id='email' placeholder="email" />
-            <input type='text' id='password' placeholder="password" />
+            <input type='text' id='email' placeholder="email" value={email} onChange={(e) => {setEmail(e.target.value)}} />
+            <input type='password' id='password' placeholder="password" value={password} onChange={(e) => {setPassword(e.target.value)}} />
             <button id="logbut"></button>
         </form>
       </div>
