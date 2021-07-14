@@ -13,5 +13,13 @@ router.post('/', authorize, async(req, res) => {
   }
 });
 
+router.get('/', authorize, async(req, res) => {
+  try {
+    const data = await pool.query('SELECT * FROM parameters WHERE owner_id = $1', [req.user.id])
+    res.json(data);
+  } catch (error) {
+    console.error(error.message);
+  }
+})
 
 module.exports = router;

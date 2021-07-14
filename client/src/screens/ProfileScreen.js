@@ -4,9 +4,7 @@ import Layout from '../core/Layout'
 const ProfileScreen = () => {
   return (
     <Layout>
-      <div>
-        Profile
-      </div>
+      <div>Profile</div>
     </Layout>
   )
 }

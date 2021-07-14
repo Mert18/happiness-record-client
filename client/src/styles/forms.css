@@ -1,13 +1,12 @@
-
-
-.form-container{
+.form-container {
   min-height: 90vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.form{
+.form {
   width: 30rem;
   height: 30rem;
   border-radius: 2rem;
@@ -16,21 +15,20 @@
   align-items: center;
   flex-direction: column;
   background-color: rgb(245, 245, 245);
-
 }
-.form h2{
+.form h2 {
   font-size: 2rem;
 }
-.form input{
+.form input {
   height: 8vh;
   font-size: 1.1rem;
   text-align: center;
-  margin: .7rem;
+  margin: 0.7rem;
   outline: none;
   width: 80%;
   border: none;
 }
-.form button{
+.form button {
   background: transparent;
   width: 3rem;
   height: 3rem;
@@ -38,58 +36,68 @@
   outline: none;
   border: none;
   align-self: center;
-  transition: all .4s;
-
+  transition: all 0.4s;
 }
-.form button:hover{
+.form button:hover {
   cursor: pointer;
 }
-#regform input::placeholder{
+#regform input::placeholder {
   color: hsl(0, 12%, 84%);
 }
-#regform input{
-  color: #C05050;
+#regform input {
+  color: #c05050;
   font-weight: 600;
 }
-#regform input:focus{
-  border-bottom: 3px solid #C05050 ;
+#regform input:focus {
+  border-bottom: 3px solid #c05050;
 }
-#regform h2{
-  color: #C05050;
+#regform h2 {
+  color: #c05050;
 }
-#regbut{
+#regbut {
   background-color: rgb(247, 192, 192);
 }
-#regbut:hover{
-  transition: all .4s;
+#regbut:hover {
+  transition: all 0.4s;
   background-color: rgb(255, 164, 164);
 }
-#regcon{
-  background-color: #C05050;
+#regcon {
+  background-color: #c05050;
 }
 
-#logform input::placeholder{
+#logform input::placeholder {
   color: hsl(0, 14%, 77%);
 }
-#logform input{
+#logform input {
   color: #352368;
   font-weight: 600;
 }
-#logform input:focus{
-  border-bottom: 3px solid #352368 ;
+#logform input:focus {
+  border-bottom: 3px solid #352368;
 }
-#logform h2{
+#logform h2 {
   color: #352368;
 }
-#logbut{
+#logbut {
   background-color: rgb(192, 193, 247);
 }
-#logbut:hover{
-  transition: all .4s;
+#logbut:hover {
+  transition: all 0.4s;
   background-color: rgb(178, 164, 255);
 }
 
-#logcon{
+#logcon {
   background-color: #352368;
 }
 
+.formcontainer-info {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 2rem;
+}
+
+.message {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 2rem;
+}
