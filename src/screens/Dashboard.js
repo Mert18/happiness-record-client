@@ -32,7 +32,7 @@ const Dashboard = ({ setAuth }) => {
   const onSubmitForm = async (e) => {
     e.preventDefault()
     try {
-      if (work + game + leisure !== 100) {
+      if (parseInt(work) + parseInt(game) + parseInt(leisure) !== 100) {
         setMessage('Work + Game + Leisure must be equal to 100.')
       } else {
         const body = { work, game, leisure, happiness }
