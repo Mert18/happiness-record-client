@@ -13,13 +13,16 @@ const RegisterScreen = ({ setAuth }) => {
     e.preventDefault()
     try {
       const body = { email, password, name }
-      const response = await fetch(process.env.REACT_APP_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/authentication/register`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+      )
       const parseRes = await response.json()
 
       if (parseRes.jwtToken) {

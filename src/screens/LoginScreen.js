@@ -12,13 +12,16 @@ const LoginScreen = ({ setAuth }) => {
     e.preventDefault()
     try {
       const body = { email, password }
-      const response = await fetch(process.env.REACT_APP_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/authentication/login`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        }
+      )
 
       const parseRes = await response.json()
 
