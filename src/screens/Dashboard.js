@@ -36,7 +36,7 @@ const Dashboard = ({ setAuth }) => {
         setMessage('Work + Game + Leisure must be equal to 100.')
       } else {
         const body = { work, game, leisure, happiness }
-        const response = await fetch('http://localhost:5000/data/', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/data`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch('http://localhost:5000/dashboard/', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/dashboard`, {
         method: 'POST',
         headers: { jwt_token: localStorage.token },
       })
@@ -70,7 +70,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getData = async () => {
     try {
-      const res = await fetch('http://localhost:5000/data', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/data`, {
         method: 'GET',
         headers: { jwt_token: localStorage.token },
       })
