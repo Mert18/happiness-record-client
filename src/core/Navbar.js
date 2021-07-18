@@ -25,13 +25,18 @@ const Navbar = () => {
     checkAuthenticated()
   }, [])
 
-
   return (
     <div className="nav">
       <div className="nav-logo">
-        <Link to="/">
-          <img src="/images/lg.svg" width="158px" alt="logo" />
-        </Link>
+        {isAuthenticated ? (
+          <Link to="/dashboard">
+            <img src="/images/lg.svg" width="158px" alt="logo" />
+          </Link>
+        ) : (
+          <Link to="/">
+            <img src="/images/lg.svg" width="158px" alt="logo" />
+          </Link>
+        )}
       </div>
       {isAuthenticated ? (
         <ul className="nav-nav">

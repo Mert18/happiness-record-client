@@ -1,0 +1,35 @@
+.feed {
+  display: grid;
+}
+.username {
+  height: 15vh;
+  background-color: rgb(179, 92, 106);
+  color: white;
+  text-align: center;
+  padding-top: 2.5rem;
+}
+.usergraph {
+  display: flex;
+  justify-content: center;
+}
+
+.change {
+  text-align: center;
+  margin: 2rem;
+}
+.change button {
+  background: transparent;
+  color: rgb(158, 55, 55);
+
+  border: none;
+  outline: none;
+  padding: 0.8rem;
+  width: 10rem;
+  height: 4rem;
+  text-align: center;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 1.5rem;
+}
+.change button:hover {
+  cursor: pointer;
+}
