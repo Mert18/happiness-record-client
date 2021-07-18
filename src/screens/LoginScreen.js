@@ -12,7 +12,6 @@ const LoginScreen = ({ setAuth }) => {
     e.preventDefault()
     try {
       const body = { email, password }
-      console.log(body)
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/authentication/login`,
         {

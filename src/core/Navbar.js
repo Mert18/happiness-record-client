@@ -25,7 +25,6 @@ const Navbar = () => {
     checkAuthenticated()
   }, [])
 
-  console.log(isAuthenticated)
 
   return (
     <div className="nav">
