@@ -2,37 +2,39 @@
 
 *,
 *::before,
-*::after{
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Ruluko', sans-serif;
+  background-color: rgba(243, 242, 242, 0.938);
 }
 
-.nav{
+.nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 20vh;
-  background-color: rgb(248, 248, 248);
+  background-color: rgba(218, 187, 51, 0.616);
 }
-.nav-logo img{
+.nav-logo img {
   display: block;
   max-width: 100%;
   max-height: 100%;
 }
 
-.nav-nav{
+.nav-nav {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.nav-nav a{
+.nav-nav a {
   margin-right: 1rem;
   font-size: 1.4rem;
   text-decoration: none;
+  color: black;
 }

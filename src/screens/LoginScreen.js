@@ -12,6 +12,7 @@ const LoginScreen = ({ setAuth }) => {
     e.preventDefault()
     try {
       const body = { email, password }
+      console.log(body)
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/authentication/login`,
         {
@@ -28,8 +29,6 @@ const LoginScreen = ({ setAuth }) => {
       if (parseRes.jwtToken) {
         localStorage.setItem('token', parseRes.jwtToken)
         setAuth(true)
-      } else {
-        setAuth(false)
       }
     } catch (err) {
       setMessage('Looks like your credentials are not correct.')

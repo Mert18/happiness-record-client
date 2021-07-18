@@ -1,53 +1,50 @@
-
-.app{
+.app {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   min-height: 80vh;
   font-size: 1.7rem;
 }
 
-.app-hero{
+.app-hero {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  color: #6a1db3;
-  font-weight: 600;
 }
-.app-hero p{
+.app-hero p {
   padding: 2rem;
 }
 
-.app-main{
+.app-main {
   grid-column: 1 / -1;
   padding: 2rem;
   font-size: 2rem;
 }
 
-.app-auth{
+.app-auth {
   grid-column: 3 / 22;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 2rem;
 }
-.app-auth a{
+.app-auth a {
   color: inherit;
   text-decoration: none;
 }
-.app-auth #reg{
+.app-auth #reg {
   background-color: rgb(190, 62, 62);
-  padding: .8rem;
+  padding: 0.8rem;
   width: 10rem;
   height: 4rem;
   color: white;
   text-align: center;
 }
-.app-auth #log{
+.app-auth #log {
   background-color: rgb(100, 62, 190);
-  padding: .8rem;
+  padding: 0.8rem;
   width: 10rem;
   height: 4rem;
   color: white;
