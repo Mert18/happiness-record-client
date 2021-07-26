@@ -12,24 +12,28 @@ const RegisterScreen = ({ setAuth }) => {
   const onSubmitForm = async (e) => {
     e.preventDefault()
     try {
-      const body = { email, password, name }
-      const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/authentication/register`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        }
-      )
-      const parseRes = await response.json()
-
-      if (parseRes.jwtToken) {
-        localStorage.setItem('token', parseRes.jwtToken)
-        setAuth(true)
+      if (password !== password2) {
+        setMessage('Passwords do not match.')
       } else {
-        setAuth(false)
+        const body = { email, password, name }
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}/authentication/register`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json',
+            },
+            body: JSON.stringify(body),
+          }
+        )
+        const parseRes = await response.json()
+
+        if (parseRes.jwtToken) {
+          localStorage.setItem('token', parseRes.jwtToken)
+          setAuth(true)
+        } else {
+          setAuth(false)
+        }
       }
     } catch (err) {
       console.error(err.message)

@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Ruluko', sans-serif;
-  background-color: rgba(243, 242, 242, 0.938);
+  background-color: #e7dcfd;
 }
 
 .nav {
@@ -18,7 +18,7 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 20vh;
-  background-color: rgba(218, 187, 51, 0.616);
+  background-color: rgba(41, 59, 219, 0.096);
 }
 .nav-logo img {
   display: block;
