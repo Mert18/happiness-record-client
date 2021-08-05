@@ -69,25 +69,25 @@
   color: hsl(0, 14%, 77%);
 }
 #logform input {
-  color: #352368;
+  color: rgb(255, 146, 44);
   font-weight: 600;
 }
 #logform input:focus {
-  border-bottom: 3px solid #352368;
+  border-bottom: 3px solid rgb(255, 146, 44);
 }
 #logform h2 {
-  color: #352368;
+  color: rgb(255, 146, 44);
 }
 #logbut {
-  background-color: rgb(192, 193, 247);
+  background-color: rgb(255, 146, 44);
 }
 #logbut:hover {
   transition: all 0.4s;
-  background-color: rgb(178, 164, 255);
+  background-color: rgb(255, 174, 82);
 }
 
 #logcon {
-  background-color: #352368;
+  background-color: rgb(197, 117, 41);
 }
 
 .formcontainer-info {

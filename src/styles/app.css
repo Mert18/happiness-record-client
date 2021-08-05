@@ -1,11 +1,11 @@
 .app {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  font-size: 1.7rem;
+  font-size: 1.3rem;
 }
 
 .app-hero {
-  grid-column: 1 / -1;
+  grid-column: 6 / 20;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +19,7 @@
 .app-main {
   grid-column: 1 / -1;
   padding: 2rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .app-auth {
@@ -35,15 +35,16 @@
 }
 .app-auth #reg {
   background-color: rgb(190, 62, 62);
-  padding: 0.8rem;
+  padding: 1.2rem;
   width: 10rem;
   height: 4rem;
   color: white;
   text-align: center;
 }
 .app-auth #log {
-  background-color: rgb(100, 62, 190);
-  padding: 0.8rem;
+  background-color: rgb(255, 146, 44);
+  padding: 1.2rem;
+
   width: 10rem;
   height: 4rem;
   color: white;
