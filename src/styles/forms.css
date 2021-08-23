@@ -7,17 +7,19 @@
   align-items: center;
 }
 .form {
-  width: 30rem;
-  height: 30rem;
+  min-width: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(245, 245, 245);
+  background-color: var(--black);
+  border: 1px solid var(--white);
   margin-bottom: 3rem;
+  padding: 2rem;
 }
 .form h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin: 2rem;
 }
 .form input {
   height: 8vh;
@@ -27,6 +29,8 @@
   outline: none;
   width: 80%;
   border: none;
+  background: var(--black);
+  border: 1px solid white;
 }
 .form button {
   background: transparent;
@@ -42,52 +46,41 @@
   cursor: pointer;
 }
 #regform input::placeholder {
-  color: hsl(0, 12%, 84%);
+  color: var(--white);
 }
 #regform input {
-  color: #c05050;
-  font-weight: 600;
+  color: var(--yellow);
 }
 #regform input:focus {
-  border-bottom: 3px solid #c05050;
+  border: 1px solid var(--yellow);
 }
 #regform h2 {
-  color: #c05050;
+  color: var(--yellow);
 }
 #regbut {
-  background-color: rgb(247, 192, 192);
+  background-color: var(--yellow);
 }
 #regbut:hover {
   transition: all 0.4s;
-  background-color: rgb(255, 164, 164);
-}
-#regcon {
-  background-color: #c05050;
 }
 
 #logform input::placeholder {
-  color: hsl(0, 14%, 77%);
+  color: var(--white);
 }
 #logform input {
-  color: rgb(255, 146, 44);
-  font-weight: 600;
+  color: var(--yellow);
 }
 #logform input:focus {
-  border-bottom: 3px solid rgb(255, 146, 44);
+  border: 1px solid var(--yellow);
 }
 #logform h2 {
-  color: rgb(255, 146, 44);
+  color: var(--yellow);
 }
 #logbut {
-  background-color: rgb(255, 146, 44);
+  background-color: var(--yellow);
 }
 #logbut:hover {
   transition: all 0.4s;
-  background-color: rgb(255, 174, 82);
-}
-
-#logcon {
-  background-color: rgb(197, 117, 41);
 }
 
 .formcontainer-info {

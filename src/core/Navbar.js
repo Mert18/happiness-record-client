@@ -27,17 +27,9 @@ const Navbar = () => {
 
   return (
     <div className="nav">
-      <div className="nav-logo">
-        {isAuthenticated ? (
-          <Link to="/dashboard">
-            <img src="/images/lg.svg" width="158px" alt="logo" />
-          </Link>
-        ) : (
-          <Link to="/">
-            <img src="/images/lg.svg" width="158px" alt="logo" />
-          </Link>
-        )}
-      </div>
+      <Link to="/" id="name">
+        Happiness Record
+      </Link>
       {isAuthenticated ? (
         <ul className="nav-nav">
           <li>
@@ -48,14 +40,7 @@ const Navbar = () => {
           </li>
         </ul>
       ) : (
-        <ul className="nav-nav">
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+        ''
       )}
     </div>
   )

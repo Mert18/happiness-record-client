@@ -8,21 +8,23 @@ const App = () => {
     <Layout>
       <div className="app">
         <div className="app-hero">
-          <h1>What is happiness</h1>
           <p>
-            What is happiness is somewhere you will find out what makes you
-            happy. It is simple. Everyday you are asked to enter some values. By
-            time, you are going to find out what makes you happy.
+            Happiness Record is somewhere you will find out what makes you
+            happy.
           </p>
-        </div>
-
-        <div className="app-auth">
-          <Link id="reg" to="/register">
-            Register
-          </Link>
-          <Link id="log" to="/login">
-            Login
-          </Link>
+          <br />
+          <p>
+            It is simple. Everyday you are asked to enter some values. By time,
+            you are going to find out what makes you happy.
+          </p>
+          <div id="links">
+            <Link id="reg" to="/register">
+              Register
+            </Link>
+            <Link id="log" to="/login">
+              Login
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>

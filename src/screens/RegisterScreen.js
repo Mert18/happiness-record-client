@@ -41,7 +41,7 @@ const RegisterScreen = ({ setAuth }) => {
   }
   return (
     <Layout>
-      <div className="form-container" id="regcon">
+      <div className="form-container">
         <div className="message">{message}</div>
         <div className="formcontainer-info">
           <p>
