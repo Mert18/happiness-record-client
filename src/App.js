@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Layout from './core/Layout'
 import { Link } from 'react-router-dom'
 import './styles/app.css'
+import { gsap } from 'gsap'
 
 const App = () => {
+  const boxRef = useRef()
+
+  useEffect(() => {
+    gsap.from(boxRef.current, { y: 20, duration: 1 })
+  })
   return (
     <Layout>
-      <div className="app">
+      <div className="app" ref={boxRef}>
         <div className="app-hero">
           <p>
             Happiness Record is somewhere you will find out what makes you

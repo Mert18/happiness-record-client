@@ -98,14 +98,19 @@ const Dashboard = ({ setAuth }) => {
           <h1>{name}</h1>
           <button onClick={(e) => logout(e)}>logout</button>
         </div>
+
+        {message ? <div className="message">{message}</div> : ''}
+
+        <div className="dashboard-graph">
+          <Graph data={data} />
+        </div>
+
         <div className="dashboard-info">
           <p>
             We encourage you to set an alarm at 23:00PM every day, come and
             enter values for the day.
           </p>
         </div>
-        {message ? <div className="message">{message}</div> : ''}
-
         <div className="dashboard-data">
           <div className="dashboard-data-today">
             <h2>
@@ -169,9 +174,6 @@ const Dashboard = ({ setAuth }) => {
             </div>
             <button>Send</button>
           </form>
-        </div>
-        <div className="dashboard-graph">
-          <Graph data={data} />
         </div>
       </div>
     </Layout>
