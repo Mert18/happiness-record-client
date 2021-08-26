@@ -3,7 +3,8 @@
 }
 .username {
   height: 15vh;
-  background-color: rgb(179, 92, 106);
+  margin: 3rem;
+  border: 1px solid var(--white);
   color: white;
   text-align: center;
   padding-top: 2.5rem;
@@ -19,7 +20,7 @@
 }
 .change button {
   background: transparent;
-  color: rgb(158, 55, 55);
+  color: var(--yellow);
 
   border: none;
   outline: none;

@@ -42,7 +42,7 @@ const Graph = ({ data }) => {
           dot={false}
         />
         <CartesianGrid stroke="#12263A" />
-        <XAxis dataKey="created_at" stroke="white" hide={true} />
+        <XAxis dataKey="created_at" stroke="white" hide={false} />
         <YAxis />
         <Legend />
         <Tooltip />

@@ -96,7 +96,7 @@ const Dashboard = ({ setAuth }) => {
       <div className="dashboard">
         <div className="dashboard-hero">
           <h1>{name}</h1>
-          <button onClick={(e) => logout(e)}>logout</button>
+          <button onClick={(e) => logout(e)}>Logout 🔴</button>
         </div>
 
         {message ? <div className="message">{message}</div> : ''}

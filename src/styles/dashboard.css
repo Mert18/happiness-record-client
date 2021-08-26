@@ -20,11 +20,13 @@
   font-size: 1.3rem;
   outline: none;
   border: none;
+  color: rgb(224, 14, 14);
   margin-top: 0.3rem;
+  padding: 1rem;
 }
 .dashboard-hero button:hover {
   cursor: pointer;
-  color: rgb(233, 230, 230);
+  border: 2px solid red;
 }
 
 .dashboard-data {
