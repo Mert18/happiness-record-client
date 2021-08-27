@@ -7,30 +7,27 @@ import { gsap } from 'gsap'
 const App = () => {
   const boxRef = useRef()
 
-  useEffect(() => {
-    gsap.from(boxRef.current, { y: 20, duration: 1 })
-  })
   return (
     <Layout>
       <div className="app" ref={boxRef}>
         <div className="app-hero">
-          <p>
-            Happiness Record is somewhere you will find out what makes you
-            happy.
-          </p>
-          <br />
+          <p>Find your source of happiness.</p>
+        </div>
+
+        <div className="app-exp">
           <p>
             It is simple. Everyday you are asked to enter some values. By time,
             you are going to find out what makes you happy.
           </p>
-          <div id="links">
-            <Link id="reg" to="/register">
-              Register
-            </Link>
-            <Link id="log" to="/login">
-              Login
-            </Link>
-          </div>
+        </div>
+
+        <div className="app-auth">
+          <Link id="reg" to="/register">
+            Register
+          </Link>
+          <Link id="log" to="/login">
+            Login
+          </Link>
         </div>
       </div>
     </Layout>

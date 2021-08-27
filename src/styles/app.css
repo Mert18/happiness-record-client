@@ -2,16 +2,45 @@
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   font-size: 1.3rem;
+  color: var(--white);
 }
 
 .app-hero {
   grid-column: 1 / -1;
-  justify-self: center;
-  width: 50%;
-  border: 1px solid var(--white);
+  justify-self: flex-start;
+  width: 90%;
   padding: 2rem;
   margin: 2rem;
-  color: var(--white);
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.app-exp {
+  grid-column: 1 / -1;
+  justify-self: flex-start;
+  width: 60%;
+  padding: 2rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.app-auth {
+  grid-column: 1 / -1;
+  justify-self: flex-start;
+  width: 60%;
+  padding: 2rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.app-auth a {
+  margin-right: 3rem;
+  color: var(--black);
+  background-color: var(--yellow);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-weight: 500;
 }
 
 #links {

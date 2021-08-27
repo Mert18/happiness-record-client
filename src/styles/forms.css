@@ -6,6 +6,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.instead {
+  margin: 1rem;
+}
+.instead a {
+  color: var(--yellow);
+}
 .form {
   min-width: 30vw;
   display: flex;
@@ -41,6 +48,7 @@
   border: none;
   align-self: center;
   transition: all 0.4s;
+  margin: 1rem;
 }
 .form button:hover {
   cursor: pointer;

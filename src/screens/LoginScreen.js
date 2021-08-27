@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Layout from '../core/Layout'
+import { Link } from 'react-router-dom'
 import '../styles/forms.css'
 
 const LoginScreen = ({ setAuth }) => {
@@ -59,6 +60,9 @@ const LoginScreen = ({ setAuth }) => {
             }}
           />
           <button id="logbut"></button>
+          <div className="instead">
+            <Link to="/register">Register Instead</Link>
+          </div>
         </form>
       </div>
     </Layout>

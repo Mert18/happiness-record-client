@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../core/Layout'
 import '../styles/forms.css'
+import { Link } from 'react-router-dom'
 
 const RegisterScreen = ({ setAuth }) => {
   const [name, setName] = useState('')
@@ -80,6 +81,9 @@ const RegisterScreen = ({ setAuth }) => {
             onChange={(e) => setPassword2(e.target.value)}
           />
           <button id="regbut"></button>
+          <div className="instead">
+            <Link to="/login">Login Instead</Link>
+          </div>
         </form>
       </div>
     </Layout>
