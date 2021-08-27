@@ -6,6 +6,41 @@ import '../styles/dashboard.css'
 import Graph from '../components/Graph'
 
 const Dashboard = ({ setAuth }) => {
+  const minVal = 0
+  const maxVal = 100
+  const rangeCount = 3
+
+  const [values, setValues] = useState(() => Array(rangeCount).fill(minVal))
+
+  const ranges = values.map((v, i, arr) => {
+    const onChange = (e) => {
+      let newArr = arr.slice()
+      newArr[i] = +e.target.value
+
+      const sum = newArr.reduce((a, b) => a + b, 0)
+      if (sum > maxVal) {
+        const rangeCount = newArr.filter((v) => v !== 0).length - 1
+        const extraPerRange = Math.ceil((sum - maxVal) / rangeCount)
+        newArr = newArr.map((v, j) =>
+          j === i ? v : Math.max(0, v - extraPerRange)
+        )
+      }
+
+      setValues(newArr)
+    }
+
+    return (
+      <input
+        type="range"
+        min={minVal}
+        max={maxVal}
+        value={v}
+        onChange={onChange}
+        key={i}
+      />
+    )
+  })
+
   const [name, setName] = useState('')
 
   const [work, setWork] = useState(0)
@@ -90,7 +125,10 @@ const Dashboard = ({ setAuth }) => {
     setTimeout(() => {
       setMessage('')
     }, 3000)
-  }, [])
+    setWork(values[0])
+    setGame(values[1])
+    setLeisure(values[2])
+  }, [values])
   return (
     <Layout>
       <div className="dashboard">
@@ -119,46 +157,8 @@ const Dashboard = ({ setAuth }) => {
           </div>
           <form className="dashboard-data-inp" onSubmit={onSubmitForm}>
             <div className="inp-group">
-              <label>Work</label>
-              <input
-                id="work"
-                type="number"
-                step="5"
-                min="0"
-                max="100"
-                value={work}
-                onChange={(e) => {
-                  setWork(e.target.value)
-                }}
-              />
-            </div>
-            <div className="inp-group">
-              <label>Game</label>
-              <input
-                id="game"
-                type="number"
-                min="0"
-                step="5"
-                max="100"
-                value={game}
-                onChange={(e) => {
-                  setGame(e.target.value)
-                }}
-              />
-            </div>
-            <div className="inp-group">
-              <label>Leisure</label>
-              <input
-                id="leisure"
-                type="number"
-                min="0"
-                step="5"
-                max="100"
-                value={leisure}
-                onChange={(e) => {
-                  setLeisure(e.target.value)
-                }}
-              />
+              <p>Work, Game, Leisure by order.</p>
+              {ranges}
             </div>
             <div className="inp-group">
               <label>Happiness</label>
