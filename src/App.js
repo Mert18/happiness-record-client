@@ -15,12 +15,10 @@ const App = () => {
         </div>
 
         <div className="app-exp">
-          <p>
-            It is simple. Everyday you are asked to enter some values. By time,
-            you are going to find out what makes you happy.
-          </p>
+          <p>Figured out it was broken. Currently working on it.</p>
         </div>
 
+        {/* }
         <div className="app-auth">
           <Link id="reg" to="/register">
             Register
@@ -29,6 +27,7 @@ const App = () => {
             Login
           </Link>
         </div>
+        {*/}
       </div>
     </Layout>
   )
