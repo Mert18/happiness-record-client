@@ -1,0 +1,5 @@
+const Header = () => {
+  return <header>HEADER COMPONENT</header>
+}
+
+export default Header
