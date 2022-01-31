@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import classes from './Register.module.css'
 import { useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Register: NextPage = () => {
   const [name, setName] = useState('')
@@ -54,6 +55,7 @@ const Register: NextPage = () => {
           </div>
 
           <button></button>
+          <Link href="/login">Login Instead</Link>
         </form>
       </div>
       <div className={classes.register__ills}></div>
