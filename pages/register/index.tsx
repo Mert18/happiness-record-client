@@ -3,6 +3,7 @@ import classes from './Register.module.css'
 import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Register: NextPage = () => {
   const [name, setName] = useState('')
@@ -15,6 +16,9 @@ const Register: NextPage = () => {
         <title>Happiness Record - Register Page</title>
         <meta name="description" content="Happiness Record Register Page" />
       </Head>
+      <div className={classes.backhome}>
+        <Link href="/">Home</Link>
+      </div>
 
       <div className={classes.register__form}>
         <form className={classes.form}>
@@ -58,7 +62,9 @@ const Register: NextPage = () => {
           <Link href="/login">Login Instead</Link>
         </form>
       </div>
-      <div className={classes.register__ills}></div>
+      <div className={classes.register__ills}>
+        <Image src="/reg.png" layout="fill" objectFit="cover" />
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import Header from './Header'
 import Footer from './Footer'
 
-export default function Layout({ children }: any) {
+const Layout = ({ children }: any) => {
   return (
     <>
       <Header />
@@ -10,3 +10,4 @@ export default function Layout({ children }: any) {
     </>
   )
 }
+export default Layout

@@ -1,5 +1,5 @@
 .register {
-  min-height: 80vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
@@ -11,6 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.backhome {
+  position: absolute;
+  top: 10%;
+  left: 10%;
 }
 
 .register__form form {
@@ -68,4 +74,5 @@
 .register__ills {
   grid-area: ills;
   min-height: 70vh;
+  position: relative;
 }

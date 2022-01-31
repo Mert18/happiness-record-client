@@ -3,6 +3,7 @@ import classes from '../register/Register.module.css'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
+import Image from 'next/image'
 
 const Login: NextPage = () => {
   const [email, setEmail] = useState('')
@@ -14,6 +15,9 @@ const Login: NextPage = () => {
         <meta name="description" content="Happiness Record Login Page" />
       </Head>
 
+      <div className={classes.backhome}>
+        <Link href="/">Home</Link>
+      </div>
       <div className={classes.register__form}>
         <form className={classes.form}>
           <div className={classes.inputs}>
@@ -38,7 +42,9 @@ const Login: NextPage = () => {
           <Link href="/register">Register Instead</Link>
         </form>
       </div>
-      <div className={classes.register__ills}></div>
+      <div className={classes.register__ills}>
+        <Image src="/login.png" layout="fill" objectFit="cover" />
+      </div>
     </div>
   )
 }
