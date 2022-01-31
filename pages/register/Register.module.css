@@ -6,6 +6,20 @@
   grid-template-areas: 'form ills';
 }
 
+.messagebox {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 5vh;
+  background-color: var(--color-purple);
+  color: var(--color-white);
+  z-index: 99;
+  padding: 2rem;
+  font-size: 1.3rem;
+}
+
 .register__form {
   grid-area: form;
   display: flex;
@@ -15,8 +29,8 @@
 
 .backhome {
   position: absolute;
-  top: 10%;
-  left: 10%;
+  bottom: 10%;
+  left: 5%;
 }
 
 .register__form form {

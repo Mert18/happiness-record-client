@@ -4,12 +4,43 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import axios from 'axios'
+import Loader from '../../app/components/modules/loader'
 
 const Register: NextPage = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordAgain, setPasswordAgain] = useState('')
+  const [username, setUsername] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [passwordAgain, setPasswordAgain] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const [loader, setLoader] = useState(false)
+
+  const handleSubmit = (e: any) => {
+    console.log(process.env.NEXT_PUBLIC_SERVER_URL)
+    e.preventDefault()
+    if (password != passwordAgain) {
+      console.log('Passwords are not identical.')
+      setMessage('Passwords are not identical.')
+    } else {
+      setLoader(true)
+      axios({
+        method: 'POST',
+        url: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/signup`,
+        data: { username, email, password },
+      })
+        .then((res) => {
+          console.log('SIGN UP SUCCESS', res)
+          setMessage(res.data.message)
+          setLoader(false)
+        })
+        .catch((err) => {
+          console.log('Sign Up error', err.response.data)
+          setLoader(false)
+          setMessage(err.response.data)
+        })
+    }
+  }
+
   return (
     <div className={classes.register}>
       <Head>
@@ -20,14 +51,22 @@ const Register: NextPage = () => {
         <Link href="/">Home</Link>
       </div>
 
+      {message ? (
+        <div className={classes.messagebox}>
+          <p>{message}</p>
+        </div>
+      ) : (
+        ''
+      )}
+
       <div className={classes.register__form}>
         <form className={classes.form}>
           <div className={classes.inputs}>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Username</label>
             <input
               type="text"
               id="name"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
@@ -58,7 +97,7 @@ const Register: NextPage = () => {
             />
           </div>
 
-          <button></button>
+          {loader ? <Loader /> : <button onClick={handleSubmit}></button>}
           <Link href="/login">Login Instead</Link>
         </form>
       </div>
