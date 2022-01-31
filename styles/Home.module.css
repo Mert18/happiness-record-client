@@ -1,2 +1,85 @@
+.home {
+  min-height: 70vh;
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+  grid-template-areas:
+    '. . .'
+    '. header .'
+    '. content .'
+    '. . .';
+}
 
+.home__header {
+  grid-area: header;
+  font-size: 1.6rem;
+}
+.home__header h2 {
+  font-weight: 400;
+  color: var(--color-purple);
+}
 
+.home__content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'left . right';
+}
+
+.home__content__text {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+
+.home__content__text__buttons button {
+  color: var(--color-purple);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  margin-right: 2rem;
+  font-weight: 300;
+}
+
+.home__content__text__buttons button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.home__content__text__buttons button:last-child {
+  margin-right: 0rem;
+}
+
+.home__content__text__buttons button:hover {
+  color: var(--color-purple-light);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.home__content__ills {
+  grid-area: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  background: var(--color-purple);
+  color: var(--color-white);
+  position: relative;
+}
+.home__content__ills::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: -20px;
+  left: -20px;
+  background: var(--color-purple-light);
+  z-index: -99;
+}
