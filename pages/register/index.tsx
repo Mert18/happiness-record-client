@@ -1,13 +1,20 @@
+import type { NextPage } from 'next'
 import classes from './Register.module.css'
 import { useState } from 'react'
+import Head from 'next/head'
 
-const Register = () => {
+const Register: NextPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [passwordAgain, setPasswordAgain] = useState('')
   return (
     <div className={classes.register}>
+      <Head>
+        <title>Happiness Record - Register Page</title>
+        <meta name="description" content="Happiness Record Register Page" />
+      </Head>
+
       <div className={classes.register__form}>
         <form className={classes.form}>
           <div className={classes.inputs}>
@@ -45,6 +52,8 @@ const Register = () => {
               onChange={(e) => setPasswordAgain(e.target.value)}
             />
           </div>
+
+          <button></button>
         </form>
       </div>
       <div className={classes.register__ills}></div>

@@ -1,6 +1,7 @@
+import type { NextPage } from 'next'
 import classes from './Login.module.css'
 
-const Login = () => {
+const Login: NextPage = () => {
   return <div className={classes.login}></div>
 }
 
