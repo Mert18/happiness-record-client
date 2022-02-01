@@ -13,9 +13,12 @@ const Feed: NextPage = () => {
 
   const getProfile = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/randomuser`, {
-        method: 'GET',
-      })
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/randomuser`,
+        {
+          method: 'GET',
+        }
+      )
       const parseData = await res.json()
       setUsers(parseData)
       getUserDataById(parseData[0]._id)
@@ -26,9 +29,12 @@ const Feed: NextPage = () => {
 
   const getUserDataById = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/userdata/${id}`, {
-        method: 'GET',
-      })
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/api/userdata/${id}`,
+        {
+          method: 'GET',
+        }
+      )
       const parseData = await res.json()
       setData(parseData)
     } catch (err) {
