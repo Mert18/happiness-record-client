@@ -44,12 +44,12 @@
   font-size: 1.1rem;
   transition: all 0.4s ease;
   margin-right: 2rem;
-  font-weight: 300;
 }
 
 .home__content__text__buttons button a {
   text-decoration: none;
   color: inherit;
+  font-weight: 200;
 }
 
 .home__content__text__buttons button:last-child {

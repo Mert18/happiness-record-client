@@ -2,8 +2,18 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import classes from '../styles/Home.module.css'
 import Link from 'next/link'
+import { useEffect } from 'react'
+import { isAuth } from '../app/utils/helpers'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (isAuth()) {
+      router.push('/feed')
+    }
+  }, [])
   return (
     <div className={classes.home}>
       <Head>

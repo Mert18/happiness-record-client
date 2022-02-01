@@ -1,0 +1,48 @@
+.activation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.activation__message p {
+  color: var(--color-purple);
+  font-size: 1.3rem;
+}
+
+.activation__signin {
+  margin-top: 2rem;
+}
+.activation__signin a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+.activation__signin a:hover {
+  cursor: pointer;
+  color: var(--color-purple-light);
+  transition: all 0.3s ease;
+}
+
+.activation__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.activation__box button {
+  background: var(--color-purple);
+  border: none;
+  outline: none;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.4s ease;
+  margin-top: 3rem;
+}
+
+.activation__box button:hover {
+  background: var(--color-purple-light);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}

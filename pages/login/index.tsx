@@ -29,13 +29,11 @@ const Login: NextPage = () => {
         console.log('SIGN In Success', res)
         setMessage(res.data.message)
         setLoader(false)
-        /*
         authenticate(res, () => {
           isAuth() && isAuth().role === 'admin'
-            ? router.push('/')
-            : router.push('/')
+            ? router.push('/feed')
+            : router.push('/profile')
         })
-         */
       })
       .catch((err) => {
         console.log('Sign In Error', err.response.data)
