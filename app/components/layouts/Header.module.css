@@ -1,6 +1,7 @@
 .header {
   height: 15vh;
   display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 .header a {
@@ -11,5 +12,37 @@
 .header h1 {
   font-weight: 300;
   color: var(--color-purple);
-  padding-left: 2rem;
+}
+
+.header__nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav ul li a {
+  color: var(--color-purple);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-right: 2rem;
+}
+
+.header__nav ul li a:hover {
+  color: var(--color-purple-light);
+  transition: all 0.3s ease;
+}
+
+.header__nav ul li button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-red);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+.header__nav ul li button:hover {
+  cursor: pointer;
+  color: var(--color-red-light);
+  transition: all 0.3s ease;
 }

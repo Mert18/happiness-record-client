@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react'
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Brush } from 'recharts'
 import Cookies from 'js-cookie'
 import classes from '../../styles/Profile.module.css'
+import { isAuth } from '../../app/utils/helpers'
+import { useRouter } from 'next/router'
 
 const Profile: NextPage = () => {
   const [username, setUsername] = useState('')
   const [data, setData] = useState([])
+  const router = useRouter()
 
   const getProfile = async () => {
     try {
@@ -41,6 +44,10 @@ const Profile: NextPage = () => {
   }
 
   useEffect(() => {
+    if (!isAuth()) {
+      router.push('/')
+    }
+
     getProfile()
   }, [])
 

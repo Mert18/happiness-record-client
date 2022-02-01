@@ -43,6 +43,10 @@ const Feed: NextPage = () => {
   }
 
   useEffect(() => {
+    if (!isAuth()) {
+      router.push('/')
+    }
+
     getProfile()
   }, [])
 
