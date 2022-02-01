@@ -1,0 +1,64 @@
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr;
+  grid-template-rows: 10vh auto 10vh auto;
+  grid-template-areas:
+    '. . .'
+    '. graph .'
+    ' . . .'
+    '. form .';
+  min-height: 80vh;
+}
+.profile__graph {
+  grid-area: graph;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__graph__head p {
+  font-size: 1.3rem;
+}
+
+.profile__form {
+  grid-area: form;
+  display: flex;
+  justify-content: center;
+}
+
+.profile__form form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__form form button {
+  height: 40px;
+  width: 40px;
+  border-radius: 0.5rem;
+  background: var(--color-purple);
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+.profile__form form button:hover {
+  background: var(--color-purple-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputgroup input {
+  height: 4vh;
+  font-size: 1.2rem;
+  margin: 0.4rem 0rem;
+  padding: 0.2rem;
+  border: 1px solid var(--color-purple);
+}

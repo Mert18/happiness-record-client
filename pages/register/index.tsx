@@ -15,7 +15,7 @@ const Register: NextPage = () => {
   const [message, setMessage] = useState<string>('')
   const [loader, setLoader] = useState(false)
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     console.log(process.env.NEXT_PUBLIC_SERVER_URL)
     e.preventDefault()
     if (password != passwordAgain) {
@@ -23,7 +23,7 @@ const Register: NextPage = () => {
       setMessage('Passwords are not identical.')
     } else {
       setLoader(true)
-      axios({
+      await axios({
         method: 'POST',
         url: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/signup`,
         data: { username, email, password },
@@ -36,7 +36,7 @@ const Register: NextPage = () => {
         .catch((err) => {
           console.log('Sign Up error', err.response.data)
           setLoader(false)
-          setMessage(err.response.data)
+          setMessage(err.response.data.error)
         })
     }
   }

@@ -11,6 +11,11 @@ const Profile: NextPage = () => {
   const [data, setData] = useState([])
   const router = useRouter()
 
+  const [work, setWork] = useState<number>(0)
+  const [leisure, setLeisure] = useState<number>(0)
+  const [game, setGame] = useState<number>(0)
+  const [happiness, setHappiness] = useState<number>(0)
+
   const getProfile = async () => {
     try {
       const res = await fetch(
@@ -51,10 +56,34 @@ const Profile: NextPage = () => {
     getProfile()
   }, [])
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    try {
+      console.log(Cookies.get('token'))
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/postmydata`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          token: Cookies.get('token'),
+        },
+        body: JSON.stringify({ work, leisure, game, happiness }),
+      })
+        .then((res) => {
+          console.log('success sending values', res)
+        })
+        .catch((err) => {
+          console.log('error sending values', err)
+        })
+    } catch (error) {
+      console.log('error submitting values', error)
+    }
+  }
   return (
     <div className={classes.profile}>
-      <div className={classes.profile__graph}>
-        <div className={classes.profile__graph__head}>{username}</div>
+      <section className={classes.profile__graph}>
+        <div className={classes.profile__graph__head}>
+          <p>{username}</p>
+        </div>
         <div className={classes.profile__graph__graph}>
           <LineChart width={1100} height={400} data={data}>
             <Line
@@ -91,9 +120,56 @@ const Profile: NextPage = () => {
             <Tooltip />
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             <XAxis dataKey="date" tickCount={50} minTickGap={15} />
+            <Brush />
           </LineChart>
         </div>
-      </div>
+      </section>
+
+      <section className={classes.profile__form}>
+        <form>
+          <div className={classes.inputgroup}>
+            <label htmlFor="work">Work</label>
+            <input
+              type="number"
+              id="work"
+              min={0}
+              max={100}
+              onChange={(e: any) => setWork(e.target.value)}
+            />
+          </div>
+          <div className={classes.inputgroup}>
+            <label htmlFor="leisure">Leisure</label>
+            <input
+              type="number"
+              id="leisure"
+              min={0}
+              max={100}
+              onChange={(e: any) => setLeisure(e.target.value)}
+            />
+          </div>
+          <div className={classes.inputgroup}>
+            <label htmlFor="game">Game</label>
+            <input
+              type="number"
+              id="game"
+              min={0}
+              max={100}
+              onChange={(e: any) => setGame(e.target.value)}
+            />
+          </div>
+          <div className={classes.inputgroup}>
+            <label htmlFor="happiness">Happiness</label>
+            <input
+              type="number"
+              id="happiness"
+              min={0}
+              max={100}
+              onChange={(e: any) => setHappiness(e.target.value)}
+            />
+          </div>
+          <button onClick={handleSubmit}></button>
+        </form>
+      </section>
     </div>
   )
 }

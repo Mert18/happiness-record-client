@@ -17,10 +17,10 @@ const Login: NextPage = () => {
 
   const router = useRouter()
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
     setLoader(true)
-    axios({
+    await axios({
       method: 'POST',
       url: `${process.env.NEXT_PUBLIC_SERVER_URL}/api/signin`,
       data: { email, password },

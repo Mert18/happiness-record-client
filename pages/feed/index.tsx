@@ -4,15 +4,18 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import classes from '../../styles/Feed.module.css'
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Brush } from 'recharts'
+import Loader from '../../app/components/modules/loader'
 
 const Feed: NextPage = () => {
   const [data, setData] = useState([])
   const [users, setUsers] = useState([])
+  const [loader, setLoader] = useState<boolean>(false)
 
   const router = useRouter()
 
   const getProfile = async () => {
     try {
+      setLoader(true)
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/api/randomuser`,
         {
@@ -37,6 +40,7 @@ const Feed: NextPage = () => {
       )
       const parseData = await res.json()
       setData(parseData)
+      setLoader(false)
     } catch (err) {
       console.error(err.message)
     }
@@ -92,8 +96,12 @@ const Feed: NextPage = () => {
             <XAxis dataKey="date" tickCount={50} minTickGap={15} />
           </LineChart>
         </div>
+        {loader ? (
+          <Loader />
+        ) : (
+          <button className={classes.nextbutton} onClick={getProfile}></button>
+        )}
       </section>
-      <button onClick={getProfile}>click</button>
     </div>
   )
 }
