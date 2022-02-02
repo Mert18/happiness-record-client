@@ -13,6 +13,7 @@
 .home__header {
   grid-area: header;
   font-size: 1.6rem;
+  margin-bottom: 3rem;
 }
 .home__header h2 {
   font-weight: 400;
@@ -27,6 +28,17 @@
   grid-template-areas: 'left . right';
 }
 
+@media (max-width: 1100px) {
+  .home__content {
+    grid-template-columns: auto;
+    grid-template-rows: auto 10vh auto;
+    grid-template-areas:
+      'left'
+      ' .'
+      'right';
+  }
+}
+
 .home__content__text {
   grid-area: left;
   display: flex;
@@ -34,6 +46,10 @@
   justify-content: space-around;
   align-items: flex-start;
   font-size: 1.2rem;
+}
+
+.home__content__text__buttons {
+  margin-top: 2rem;
 }
 
 .home__content__text__buttons button {
@@ -66,6 +82,7 @@
   grid-area: right;
   display: flex;
   justify-content: center;
+  justify-self: center;
   align-items: center;
   height: 300px;
   width: 300px;

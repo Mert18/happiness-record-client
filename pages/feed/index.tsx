@@ -8,7 +8,7 @@ import Loader from '../../app/components/modules/loader'
 
 const Feed: NextPage = () => {
   const [data, setData] = useState([])
-  const [users, setUsers] = useState([])
+  const [username, setUsername] = useState<string>('')
   const [loader, setLoader] = useState<boolean>(false)
 
   const router = useRouter()
@@ -23,7 +23,7 @@ const Feed: NextPage = () => {
         }
       )
       const parseData = await res.json()
-      setUsers(parseData)
+      setUsername(parseData[0].username)
       getUserDataById(parseData[0]._id)
     } catch (err) {
       console.error(err.message)
@@ -57,7 +57,7 @@ const Feed: NextPage = () => {
   return (
     <div className={classes.feed}>
       <section className={classes.graph}>
-        <div className={classes.graph__head}></div>
+        <div className={classes.graph__head}>{username}</div>
         <div className={classes.graph__graph}>
           <LineChart width={1100} height={400} data={data}>
             <Line
