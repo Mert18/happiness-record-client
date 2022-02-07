@@ -6,6 +6,9 @@
   --color-white: #fafdf6;
   --color-red: #a32351;
   --color-red-light: #d9447a;
+
+  --color-success: rgb(51, 134, 51);
+  --color-fail: rgb(184, 31, 31);
 }
 
 *,
