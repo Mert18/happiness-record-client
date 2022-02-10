@@ -86,7 +86,7 @@ const Login: NextPage = () => {
         </form>
       </div>
       <div className={classes.register__ills}>
-        <Image src="/login.png" layout="fill" objectFit="cover" />
+        <Image src="/Login.svg" layout="fill" objectFit="cover" />
       </div>
     </div>
   )

@@ -102,7 +102,7 @@ const Register: NextPage = () => {
         </form>
       </div>
       <div className={classes.register__ills}>
-        <Image src="/reg.png" layout="fill" objectFit="cover" />
+        <Image src="/Reg.svg" layout="fill" objectFit="cover" />
       </div>
     </div>
   )
